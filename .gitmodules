@@ -1,0 +1,3 @@
+[submodule "YellowLab.Windows"]
+	path = YellowLab.Windows
+	url = git@github.com:jasonsch/YellowLab.Windows.git

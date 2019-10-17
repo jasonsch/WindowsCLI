@@ -55,9 +55,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\YellowLab\YellowLab\YellowLab.csproj">
+    <ProjectReference Include="..\..\YellowLab.Windows\YellowLab.Windows\YellowLab.Windows.csproj">
       <Project>{ecdda8fa-beb0-4320-baac-b9a0227e9fef}</Project>
-      <Name>YellowLab</Name>
+      <Name>YellowLab.Windows</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

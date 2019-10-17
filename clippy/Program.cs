@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using Mono.Options;
-using YellowLab.GUI;
+using YellowLab.Windows.GUI;
 
 namespace clippy
 {

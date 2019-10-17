@@ -4,7 +4,7 @@ using System.Media;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using Mono.Options;
-using YellowLab.GUI;
+using YellowLab.Windows.GUI;
 
 namespace printscreen
 {

@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic.FileIO;
-using YellowLab.Win32;
+using YellowLab.Windows.Win32;
 
 namespace mmove
 {

@@ -1,5 +1,5 @@
 ﻿using System;
-using YellowLab.GUI;
+using YellowLab.Windows.GUI;
 
 namespace balloon
 {

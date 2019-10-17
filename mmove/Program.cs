@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using Microsoft.VisualBasic.FileIO;
-using YellowLab.Win32;
+using YellowLab.Windows.Win32;
 using Mono.Options;
 
 

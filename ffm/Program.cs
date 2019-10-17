@@ -1,5 +1,5 @@
 ﻿using System;
-using YellowLab.Win32;
+using YellowLab.Windows.Win32;
 using Mono.Options;
 
 namespace ffm
@@ -33,9 +33,9 @@ namespace ffm
             options.Add("p", value => PersistSystemSettings = (value != null));
             options.Parse(args);
 
-            Win32Interop.SetSystemParameter(YellowLab.Win32.Win32Interop.SPI_SETACTIVEWINDOWTRACKING, EnableActiveWindowTracking, PersistSystemSettings);
-            Win32Interop.SetSystemParameter(YellowLab.Win32.Win32Interop.SPI_SETACTIVEWNDTRKZORDER, EnableActiveWindowZordering, PersistSystemSettings);
-            Win32Interop.SetSystemParameter(YellowLab.Win32.Win32Interop.SPI_SETACTIVEWNDTRKTIMEOUT, Timeout, PersistSystemSettings);
+            Win32Interop.SetSystemParameter(YellowLab.Windows.Win32.Win32Interop.SPI_SETACTIVEWINDOWTRACKING, EnableActiveWindowTracking, PersistSystemSettings);
+            Win32Interop.SetSystemParameter(YellowLab.Windows.Win32.Win32Interop.SPI_SETACTIVEWNDTRKZORDER, EnableActiveWindowZordering, PersistSystemSettings);
+            Win32Interop.SetSystemParameter(YellowLab.Windows.Win32.Win32Interop.SPI_SETACTIVEWNDTRKTIMEOUT, Timeout, PersistSystemSettings);
         }
     }
 }
