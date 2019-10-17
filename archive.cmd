@@ -23,5 +23,4 @@ copy /y mmove\bin\Debug\taglib-sharp.dll temp_binaries
 
 powershell.exe -nologo -noprofile -command "& { Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::CreateFromDirectory('temp_binaries', 'windowscli.binaries.zip'); }"
 
-REM TODO
-REM rd /s /q temp_binaries
+rd /s /q temp_binaries
