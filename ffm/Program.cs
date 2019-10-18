@@ -22,7 +22,8 @@ namespace ffm
             int Timeout = 300; // In milliseconds
             bool EnableActiveWindowTracking = true;
             bool EnableActiveWindowZordering = true;
-            bool PersistSystemSettings = true;
+            bool PersistSystemSettings = false;
+            bool ArgumentsPassed = false;
 
             OptionSet options = new OptionSet();
 
@@ -33,9 +34,32 @@ namespace ffm
             options.Add("p", value => PersistSystemSettings = (value != null));
             options.Parse(args);
 
-            Win32Interop.SetSystemParameter(YellowLab.Windows.Win32.Win32Interop.SPI_SETACTIVEWINDOWTRACKING, EnableActiveWindowTracking, PersistSystemSettings);
-            Win32Interop.SetSystemParameter(YellowLab.Windows.Win32.Win32Interop.SPI_SETACTIVEWNDTRKZORDER, EnableActiveWindowZordering, PersistSystemSettings);
-            Win32Interop.SetSystemParameter(YellowLab.Windows.Win32.Win32Interop.SPI_SETACTIVEWNDTRKTIMEOUT, Timeout, PersistSystemSettings);
+            if (ArgumentsPassed)
+            {
+                Win32Interop.SetSystemParameter(YellowLab.Windows.Win32.Win32Interop.SPI_SETACTIVEWINDOWTRACKING, EnableActiveWindowTracking, PersistSystemSettings);
+                Win32Interop.SetSystemParameter(YellowLab.Windows.Win32.Win32Interop.SPI_SETACTIVEWNDTRKZORDER, EnableActiveWindowZordering, PersistSystemSettings);
+                Win32Interop.SetSystemParameter(YellowLab.Windows.Win32.Win32Interop.SPI_SETACTIVEWNDTRKTIMEOUT, Timeout, PersistSystemSettings);
+            }
+            else
+            {
+                PrintFocusFollowsMouseSettings();
+            }
+        }
+
+        private static void PrintFocusFollowsMouseSettings()
+        {
+            bool bEnabled;
+            bool bZorderEnabled;
+            int uTimeout;
+
+            Win32Interop.GetSystemParameter(YellowLab.Windows.Win32.Win32Interop.SPI_GETACTIVEWINDOWTRACKING, out bEnabled);
+            Console.WriteLine("Enabled ==> " + bEnabled);
+
+            Win32Interop.GetSystemParameter(YellowLab.Windows.Win32.Win32Interop.SPI_GETACTIVEWNDTRKZORDER, out bZorderEnabled);
+            Console.WriteLine("Z-order enabled ==> " + bZorderEnabled);
+
+            Win32Interop.GetSystemParameter(YellowLab.Windows.Win32.Win32Interop.SPI_GETACTIVEWNDTRKTIMEOUT, out uTimeout);
+            Console.WriteLine("Timeout ==> " + uTimeout);
         }
     }
 }
