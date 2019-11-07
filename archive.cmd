@@ -11,6 +11,7 @@ copy /y pathadd\bin\Release\pathadd.exe temp_binaries
 copy /y pathdel\bin\Release\pathdel.exe temp_binaries
 copy /y regfind\bin\Release\regfind.exe temp_binaries
 copy /y regprint\bin\Release\regprint.exe temp_binaries
+copy /y settingschange\bin\Release\settingschange.exe temp_binaries
 copy /y startupadd\bin\Release\startupadd.exe temp_binaries
 copy /y startupdel\bin\Release\startupdel.exe temp_binaries
 copy /y unzip\bin\Release\unzip.exe temp_binaries
