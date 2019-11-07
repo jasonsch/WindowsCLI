@@ -46,9 +46,14 @@ namespace environment
 
         static void UpdateEnvironmentVariable(string VariableName, string Value, bool Append)
         {
-            using (RegistryKey UserEnvironment = Registry.CurrentUser.OpenSubKey(UserEnvironmentKey))
+            using (RegistryKey UserEnvironment = Registry.CurrentUser.OpenSubKey(UserEnvironmentKey, true))
             {
+                if (Append)
+                {
+                    Value = UserEnvironment.GetValue(VariableName, "") as string + Value;
+                }
 
+                UserEnvironment.SetValue(VariableName, Value);
             }
         }
 
