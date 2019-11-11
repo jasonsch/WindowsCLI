@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.IO;
-using System.Threading.Tasks;
 using Mono.Options;
 
 namespace open
@@ -78,6 +76,10 @@ namespace open
             return Files;
         }
 
+        //
+        // TODO -- We should be doing some cleanup of the parameters. For example, if the user passes the string ""C:\Users\jasonsch\Amazon Drive\christina\""
+        // we'll get an arg that has a quote character in it.
+        //
         static void HandleArgument(string arg)
         {
             if (IsRegularExpression(arg))
@@ -99,7 +101,14 @@ namespace open
                     }
                     else
                     {
-                        p = System.Diagnostics.Process.Start(arg);
+                        if (Directory.Exists(arg))
+                        {
+                            p = System.Diagnostics.Process.Start("explorer", arg);
+                        }
+                        else
+                        {
+                            p = System.Diagnostics.Process.Start(arg);
+                        }
                     }
 
                     if (p != null && Wait)
