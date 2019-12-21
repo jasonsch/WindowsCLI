@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YellowLab.Windows\YellowLab.Windows\YellowLab.Windows.csproj">
+      <Project>{ecdda8fa-beb0-4320-baac-b9a0227e9fef}</Project>
+      <Name>YellowLab.Windows</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

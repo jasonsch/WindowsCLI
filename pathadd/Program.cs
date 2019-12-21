@@ -1,11 +1,19 @@
 ﻿using System;
 using System.Linq;
 using Microsoft.Win32;
+using YellowLab.Windows.Win32;
 
 namespace pathadd
 {
     class Program
     {
+        static void BroadcastWininiChangeMessage()
+        {
+            IntPtr result;
+
+            Win32Interop.SendMessageTimeout(Win32Interop.HWND_BROADCAST, 0x1A, IntPtr.Zero, "Environment", 2, 2000, out result);
+        }
+
         static void Main(string[] args)
         {
             RegistryKey Key = Registry.CurrentUser.OpenSubKey("Environment", true);
@@ -24,6 +32,8 @@ namespace pathadd
             {
                 Path += $";{args[0]}";
                 Key.SetValue("Path", Path);
+
+                BroadcastWininiChangeMessage();
             }
         }
     }

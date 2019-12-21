@@ -1,5 +1,7 @@
 mkdir temp_binaries
 
+del windowscli.binaries.zip
+
 copy /y attr\bin\Release\attr.exe temp_binaries
 copy /y balloon\bin\Release\balloon.exe temp_binaries
 copy /y clippy\bin\Release\clippy.exe temp_binaries
@@ -16,11 +18,11 @@ copy /y startupadd\bin\Release\startupadd.exe temp_binaries
 copy /y startupdel\bin\Release\startupdel.exe temp_binaries
 copy /y unzip\bin\Release\unzip.exe temp_binaries
 copy /y zip\bin\Release\zip.exe temp_binaries
-copy /y balloon\bin\Debug\Newtonsoft.Json.dll temp_binaries
-copy /y balloon\bin\Debug\YellowLab.Windows.dll temp_binaries
-copy /y clippy\bin\Debug\Mono.Options.dll temp_binaries
-copy /y mmove\bin\Debug\policy.2.0.taglib-sharp.dll temp_binaries
-copy /y mmove\bin\Debug\taglib-sharp.dll temp_binaries
+copy /y balloon\bin\release\Newtonsoft.Json.dll temp_binaries
+copy /y environment\bin\release\YellowLab.Windows.dll temp_binaries
+copy /y clippy\bin\release\Mono.Options.dll temp_binaries
+copy /y mmove\bin\release\policy.2.0.taglib-sharp.dll temp_binaries
+copy /y mmove\bin\release\taglib-sharp.dll temp_binaries
 
 powershell.exe -nologo -noprofile -command "& { Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::CreateFromDirectory('temp_binaries', 'windowscli.binaries.zip'); }"
 

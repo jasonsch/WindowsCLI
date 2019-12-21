@@ -1,10 +1,18 @@
 ﻿using System;
 using Microsoft.Win32;
+using YellowLab.Windows.Win32;
 
 namespace pathdel
 {
     class Program
     {
+        static void BroadcastWininiChangeMessage()
+        {
+            IntPtr result;
+
+            Win32Interop.SendMessageTimeout(Win32Interop.HWND_BROADCAST, 0x1A, IntPtr.Zero, "Environment", 2, 2000, out result);
+        }
+
         static void Main(string[] args)
         {
             RegistryKey Key = Registry.CurrentUser.OpenSubKey("Environment", true);
@@ -22,13 +30,14 @@ namespace pathdel
 
             foreach (string PathValue in PathValues)
             {
-                if (PathValue != args[0])
+                if (PathValue.ToLower() != args[0].ToLower())
                 {
                     NewPath += $"{PathValue};";
                 }
             }
 
             Key.SetValue("Path", NewPath.TrimEnd(';'));
+            BroadcastWininiChangeMessage();
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.Win32;
 using Mono.Options;
+using YellowLab.Windows.Win32;
 
 namespace environment
 {
@@ -55,24 +56,58 @@ namespace environment
 
                 UserEnvironment.SetValue(VariableName, Value);
             }
+
+            BroadcastSettingChangeMessage();
         }
+
+        private static void DeleteEnvironmentVariable(string name)
+        {
+            using (RegistryKey UserEnvironment = Registry.CurrentUser.OpenSubKey(UserEnvironmentKey, true))
+            {
+                UserEnvironment.DeleteValue(name);
+            }
+
+            BroadcastSettingChangeMessage();
+        }
+
+        //
+        // This cases explorer.exe to pickup the new registry settings so processes that it creates going forward reflect
+        // the new settings.
+        //
+        private static void BroadcastSettingChangeMessage()
+        {
+            IntPtr result;
+
+            Win32Interop.SendMessageTimeout(Win32Interop.HWND_BROADCAST, 0x1A, IntPtr.Zero, "Environment", 2, 2000, out result);
+        }
+
 
         static void Main(string[] args)
         {
-            bool AppendValue = false;
+            bool appendValue = false;
+            bool deleteValue = false;
 
             OptionSet options = new OptionSet();
 
             options.Add("?|h|help", value => PrintUsage());
-            options.Add("a", value => AppendValue = (value != null));
+            options.Add("a|append", value => appendValue = true);
+            options.Add("d|delete", value => deleteValue = true);
+
             List<string> parameters = options.Parse(args);
             if (parameters.Count == 1)
             {
-                ShowEnvironmentVariable(parameters[0]);
+                if (deleteValue)
+                {
+                    DeleteEnvironmentVariable(parameters[0]);
+                }
+                else
+                {
+                    ShowEnvironmentVariable(parameters[0]);
+                }
             }
             else if (parameters.Count == 2)
             {
-                UpdateEnvironmentVariable(parameters[0], parameters[1], AppendValue);
+                UpdateEnvironmentVariable(parameters[0], parameters[1], appendValue);
             }
             else
             {
@@ -82,4 +117,3 @@ namespace environment
         }
     }
 }
-
