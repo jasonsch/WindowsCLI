@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F92A4FD4-262F-47E0-8E84-4785163C1624}</ProjectGuid>
+    <ProjectGuid>{9140B631-010A-4559-A732-F870854487CD}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>clippy</RootNamespace>
-    <AssemblyName>clippy</AssemblyName>
+    <RootNamespace>clipout</RootNamespace>
+    <AssemblyName>clipout</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,12 +51,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Mono.Options">
-      <Version>5.3.0.1</Version>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\YellowLab.Windows\YellowLab.Windows\YellowLab.Windows.csproj">
+    <ProjectReference Include="..\YellowLab.Windows\YellowLab.Windows\YellowLab.Windows.csproj">
       <Project>{ecdda8fa-beb0-4320-baac-b9a0227e9fef}</Project>
       <Name>YellowLab.Windows</Name>
     </ProjectReference>

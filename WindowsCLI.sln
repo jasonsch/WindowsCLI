@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "balloon", "balloon\balloon.csproj", "{B2C3D3A5-45FD-4376-B9C3-698139C5550E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clippy", "clippy\clippy.csproj", "{F92A4FD4-262F-47E0-8E84-4785163C1624}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clipin", "clipin\clipin.csproj", "{F92A4FD4-262F-47E0-8E84-4785163C1624}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "environment", "environment\environment.csproj", "{B2A70C5C-6D35-416E-AA4A-5035840BAEF0}"
 EndProject
@@ -44,6 +44,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YellowLab.Windows", "YellowLab.Windows\YellowLab.Windows\YellowLab.Windows.csproj", "{ECDDA8FA-BEB0-4320-BAAC-B9A0227E9FEF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "settingschange", "settingschange\settingschange.csproj", "{42ACEEC1-75CC-4C31-AA7E-B2833643A30A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clipout", "clipout\clipout.csproj", "{9140B631-010A-4559-A732-F870854487CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -135,6 +137,10 @@ Global
 		{42ACEEC1-75CC-4C31-AA7E-B2833643A30A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42ACEEC1-75CC-4C31-AA7E-B2833643A30A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42ACEEC1-75CC-4C31-AA7E-B2833643A30A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9140B631-010A-4559-A732-F870854487CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9140B631-010A-4559-A732-F870854487CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9140B631-010A-4559-A732-F870854487CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9140B631-010A-4559-A732-F870854487CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
