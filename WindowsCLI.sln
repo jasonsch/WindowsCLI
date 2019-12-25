@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "settingschange", "settingsc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clipout", "clipout\clipout.csproj", "{9140B631-010A-4559-A732-F870854487CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clipfile", "clipfile\clipfile.csproj", "{0FCB5BA0-3958-4FFB-BB91-403A7B65FEED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +143,10 @@ Global
 		{9140B631-010A-4559-A732-F870854487CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9140B631-010A-4559-A732-F870854487CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9140B631-010A-4559-A732-F870854487CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FCB5BA0-3958-4FFB-BB91-403A7B65FEED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FCB5BA0-3958-4FFB-BB91-403A7B65FEED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FCB5BA0-3958-4FFB-BB91-403A7B65FEED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FCB5BA0-3958-4FFB-BB91-403A7B65FEED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
