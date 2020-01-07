@@ -27,11 +27,11 @@ namespace ffm
 
             OptionSet options = new OptionSet();
 
-            options.Add("?|h|help", value => PrintUsage());
-            options.Add("t", value => EnableActiveWindowTracking = (value != null));
-            options.Add("timeout=", value => Timeout = Int32.Parse(value));
-            options.Add("z", value => EnableActiveWindowZordering = (value != null));
-            options.Add("p", value => PersistSystemSettings = (value != null));
+            options.Add("?|h|help", value => { PrintUsage(); ArgumentsPassed = true; });
+            options.Add("t", value => { EnableActiveWindowTracking = (value != null); ArgumentsPassed = true; });
+            options.Add("timeout=", value => { Timeout = Int32.Parse(value); ArgumentsPassed = true; });
+            options.Add("z", value => { EnableActiveWindowZordering = (value != null); ArgumentsPassed = true; });
+            options.Add("p", value => { PersistSystemSettings = (value != null); ArgumentsPassed = true; });
             options.Parse(args);
 
             if (ArgumentsPassed)
