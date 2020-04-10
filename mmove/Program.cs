@@ -44,7 +44,24 @@ namespace mmove
 
             foreach (string File in FileNames)
             {
-                MoveMusic(File, DestinationPath);
+                MoveMusicTopLevel(File, DestinationPath);
+            }
+        }
+
+        private static void MoveMusicTopLevel(string file, string destinationPath)
+        {
+            // If this is a directory, then let's enumerate all the directories and/or files within it.
+            if (Directory.Exists(file))
+            {
+                foreach (string dir in Directory.GetDirectories(file))
+                {
+                    MoveMusicTopLevel(dir, destinationPath);
+                }
+
+                foreach (string fileName in Directory.GetFiles(file))
+                {
+                    MoveMusic(fileName, destinationPath);
+                }
             }
         }
 
