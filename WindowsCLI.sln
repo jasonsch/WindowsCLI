@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clipfile", "clipfile\clipfi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xargs", "xargs\xargs.csproj", "{C60D297A-4F50-4C2F-B2F2-9F6357BCA5DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "monitors", "monitors\monitors.csproj", "{562A477E-C271-46C8-924F-E85EDDFB214A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,10 @@ Global
 		{C60D297A-4F50-4C2F-B2F2-9F6357BCA5DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C60D297A-4F50-4C2F-B2F2-9F6357BCA5DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C60D297A-4F50-4C2F-B2F2-9F6357BCA5DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{562A477E-C271-46C8-924F-E85EDDFB214A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{562A477E-C271-46C8-924F-E85EDDFB214A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{562A477E-C271-46C8-924F-E85EDDFB214A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{562A477E-C271-46C8-924F-E85EDDFB214A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
