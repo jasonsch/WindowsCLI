@@ -15,10 +15,6 @@ namespace clipout
             Environment.Exit(-1);
         }
 
-        //
-        // TODO -- Also put the file on the clipboard with CF_HDROP so it can be pasted via explorer
-        // https://docs.microsoft.com/en-us/windows/win32/dataxchg/standard-clipboard-formats
-        //
         static void Main(string[] args)
         {
             if (args.Length == 0)
