@@ -26,8 +26,7 @@ namespace ffm
             bool ArgumentsPassed = false;
 
             OptionSet options = new OptionSet();
-
-            options.Add("?|h|help", value => { PrintUsage(); ArgumentsPassed = true; });
+            options.Add("?|h|help", value => { PrintUsage(); });
             options.Add("t", value => { EnableActiveWindowTracking = (value != null); ArgumentsPassed = true; });
             options.Add("timeout=", value => { Timeout = Int32.Parse(value); ArgumentsPassed = true; });
             options.Add("z", value => { EnableActiveWindowZordering = (value != null); ArgumentsPassed = true; });
